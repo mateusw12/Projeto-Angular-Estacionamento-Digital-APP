@@ -1,0 +1,25 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.mat-form-field+.mat-form-field {
+  margin-left: 20px;
+}
+
+.size-name-endereco-cidade-senha {
+  width: 300px;
+}
+
+.size-cnpj-cep-cep-bairro {
+  width: 200px;
+  margin-left: 80px;
+}
+
+.size {
+  width: 50vw;
+}
+
+.position {
+  margin-left: 250px;
+  margin-bottom: 20px;
+}

@@ -1,0 +1,33 @@
+mat-card {
+  max-width: 500px;
+  margin: 2em auto;
+}
+
+.user-registration-content {
+  padding: 60px 1rem;
+}
+
+.content-title {
+  text-align: center;
+  font-size: xx-large;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.full-width-input {
+  width: 100%;
+}
+
+.size-icon {
+  background-size: cover;
+  height: 20px !important;
+  width: 20px !important;
+  font-size: 40px !important;
+}
+
+.size-userName {
+  width: 225px;
+}
+
+button {
+  margin: 70px;
+}

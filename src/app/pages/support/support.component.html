@@ -1,0 +1,39 @@
+<form [formGroup]="form">
+  <div class="row">
+    <h2 mat-dialog-title>Suporte</h2>
+  </div>
+  <mat-dialog-content class="mat-typography size">
+    <div class="row">
+      <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6">
+        <div class="form-group">
+          <mat-form-field class="size-complaint">
+            <textarea matInput placeholder="Reclamação" row="5" maxlength="300" formControlName="complaint"
+              required></textarea>
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6">
+        <div class="form-group">
+          <mat-form-field>
+            <div>
+              <mat-toolbar>
+                <input matInput  readonly name="name" />
+                <button mat-flat-button color="primary">
+                  Anexar Arquivo
+                </button>
+              </mat-toolbar>
+              <input type="file" #fileInput id="uploadFile" (change)="uploadFileEvt($event)" name="uploadFile"
+                multiple="multiple" accept=".doc , .docx , .jpg , .jpeg , .png" />
+            </div>
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+  </mat-dialog-content>
+  <mat-dialog-actions align="end">
+    <button mat-button class="btn-success" (click)="onSubmit()">Enviar</button>
+    <button mat-button mat-dialog-close class="btn-danger">Fechar</button>
+  </mat-dialog-actions>
+</form>

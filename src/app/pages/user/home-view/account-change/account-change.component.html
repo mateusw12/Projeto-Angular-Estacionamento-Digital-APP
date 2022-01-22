@@ -1,0 +1,80 @@
+<form [formGroup]="form">
+  <div class="row">
+    <h2 mat-dialog-title>Configuração da Conta
+    </h2>
+  </div>
+  <mat-dialog-content class="mat-typography size">
+    <div class="row">
+      <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6">
+        <div class="form-group">
+          <mat-form-field class="size-name-email ">
+            <input matInput
+                   type="text"
+                   placeholder="Nome Completo"
+                   formControlName="nome">
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6">
+        <mat-form-field class="size-cpf-date">
+          <input matInput
+                 type="text"
+                 placeholder="CPF"
+                 formControlName="cpf">
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6">
+        <div class="form-group">
+          <mat-form-field class="size-name-email ">
+            <input matInput
+                   type="email"
+                   placeholder="E-mail"
+                   formControlName="email">
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6">
+        <mat-form-field class="size-cpf-date">
+          <mat-label>Data Nascimento</mat-label>
+          <input matInput
+                 [matDatepicker]="picker"
+                 formControlName="dataNasc"
+                 [max]="dateFinal"
+                 [min]="dateInicial">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6 col-md-6 col-lg-6">
+        <div class="form-group">
+            <mat-form-field class="size-name-email">
+              <input matInput
+                     type="text"
+                     placeholder="Senha"
+                     formControlName="senha">
+            </mat-form-field>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-6 col-lg-6">
+        <div class="form-group">
+          <mat-form-field class="size-userName">
+            <input matInput
+                   type="text"
+                   placeholder="Nome Usuário"
+                   formControlName="nomeUsuario">
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+  </mat-dialog-content>
+  <mat-dialog-actions align="end">
+    <button mat-stroked-button [mat-dialog-close]="true" (click)="onSubmit()" class="btn-success"
+      [disabled]="!this.form.dirty">Salvar</button>
+    <button mat-button mat-dialog-close class="btn-danger">Fechar</button>
+  </mat-dialog-actions>
+</form>
+

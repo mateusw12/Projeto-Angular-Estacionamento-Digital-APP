@@ -1,0 +1,126 @@
+<div class="company-registration-content">
+  <mat-card>
+    <mat-card-header>
+      <div mat-card-avatar>
+        <mat-icon class="size-icon">add_business
+        </mat-icon>
+      </div>
+      <p class="content-title">Cadastro de Empresa</p>
+    </mat-card-header>
+    <mat-card-content class="size">
+      <form [formGroup]="form">
+        <div class="row">
+          <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+            <div class="form-group">
+              <mat-form-field class="full-width-input">
+                <input matInput
+                       type="text"
+                       placeholder="Nome Empresa"
+                       formControlName="nome">
+              </mat-form-field>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+            <div class="form-group">
+              <mat-form-field class="full-width-input">
+                <input matInput
+                       type="text"
+                       placeholder="Nome Fantasia"
+                       formControlName="nomeFantasia">
+              </mat-form-field>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+            <div class="form-group">
+              <mat-form-field class="full-width-input">
+                <input matInput
+                       type="password"
+                       placeholder="Senha"
+                       formControlName="senha">
+              </mat-form-field>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
+            <div class="form-group">
+              <mat-form-field class="full-width-input">
+                <input matInput
+                       type="text"
+                       placeholder="CEP"
+                       formControlName="cep">
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="col-sm-8 col-md-8 col-lg-8 col-xl-8">
+            <div class="form-group">
+              <mat-form-field class="full-width-input">
+                <input matInput
+                       type="text"
+                       placeholder="Endereço"
+                       formControlName="endereco"
+                       [readonly]="true">
+              </mat-form-field>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-5 col-md-5 col-lg-5 col-xl-5">
+            <div class="form-group">
+              <mat-form-field class="full-width-input">
+                <input matInput
+                       type="text"
+                       placeholder="Bairro"
+                       formControlName="bairro"
+                       [readonly]="true">
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="col-sm-7 col-md-7 col-lg-7 col-xl-7">
+            <div class="form-group">
+              <mat-form-field class="full-width-input">
+                <input matInput
+                       type="text"
+                       placeholder="Cidade"
+                       formControlName="cidade"
+                       [readonly]="true">
+              </mat-form-field>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-7 col-md-7 col-lg-7 col-xl-7">
+            <div class="form-group">
+              <mat-form-field class="full-width-input">
+                <input matInput
+                       type="text"
+                       placeholder="Estado"
+                       formControlName="estado"
+                       [readonly]="true">
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="col-sm-5 col-md-5 col-lg-5 col-xl-5">
+            <div class="form-group">
+              <mat-form-field class="full-width-input">
+                <input matInput
+                       #input
+                       type="text"
+                       placeholder="CNPJ"
+                       formControlName="cnpj"
+                       maxlength="14">
+                <mat-hint align="end">{{input.value?.length || 0}}/14</mat-hint>
+              </mat-form-field>
+            </div>
+          </div>
+        </div>
+        <button mat-stroked-button color="primary" (click)="OnSubmit()" [disabled]="!this.form.dirty">Cadastrar</button>
+        <button mat-raised-button color="accent" (click)="onExit()">Voltar</button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

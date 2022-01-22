@@ -1,0 +1,104 @@
+<form [formGroup]="form">
+  <div class="row">
+    <h2 mat-dialog-title>Forma de Pagamento
+    </h2>
+  </div>
+  <mat-dialog-content class="mat-typography size">
+    <div class="row">
+      <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6">
+        <div class="form-group">
+          <mat-form-field class="size-name-email ">
+            <input matInput type="text" placeholder="Nome Completo" formControlName="nome" [readonly]="true">
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6">
+        <mat-form-field class="size-cpf-date">
+          <input matInput type="text" placeholder="CPF" formControlName="cpf" [readonly]="true">
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6">
+        <mat-form-field class="size-cpf-date">
+          <input matInput type="text" placeholder="Cód. Vaga" formControlName="codigoVaga" [readonly]="true">
+        </mat-form-field>
+      </div>
+      <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6">
+        <mat-form-field class="size-cpf-date">
+          <input matInput type="text" placeholder="Veículo" formControlName="veiculo" [readonly]="true">
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6">
+        <mat-form-field class="size-cpf-date">
+          <input matInput type="text" placeholder="Número" formControlName="numero" [readonly]="true">
+        </mat-form-field>
+      </div>
+      <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6">
+        <mat-form-field class="size-cpf-date">
+          <input matInput type="text" placeholder="Classificação Física" formControlName="classificacaoFisica"
+            [readonly]="true">
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6">
+        <mat-form-field class="size-cpf-date">
+          <mat-label>Data Inicio</mat-label>
+          <input matInput [matDatepicker]="datepicker" formControlName="dataInicio" [min]="today">
+          <mat-datepicker-toggle matSuffix [for]="datepicker"></mat-datepicker-toggle>
+          <mat-datepicker #datepicker>
+            <mat-datepicker-actions>
+              <button mat-button matDatepickerCancel>Cancelar</button>
+              <button mat-raised-button color="primary" matDatepickerApply>Aplicar</button>
+            </mat-datepicker-actions>
+          </mat-datepicker>
+        </mat-form-field>
+      </div>
+      <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6">
+        <mat-form-field class="size-cpf-date">
+          <mat-label>Data Fim</mat-label>
+          <input matInput [matDatepicker]="datepicker" formControlName="dataFim" [min]="today">
+          <mat-datepicker-toggle matSuffix [for]="datepicker"></mat-datepicker-toggle>
+          <mat-datepicker #datepicker>
+            <mat-datepicker-actions>
+              <button mat-button matDatepickerCancel>Cancelar</button>
+              <button mat-raised-button color="primary" matDatepickerApply>Aplicar</button>
+            </mat-datepicker-actions>
+          </mat-datepicker>
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6">
+        <mat-form-field class="size-cpf-date">
+          <input matInput type="text" placeholder="Número Cartão" formControlName="numeroCartao">
+        </mat-form-field>
+      </div>
+      <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6">
+        <mat-form-field class="size-cpf-date">
+          <input matInput type="text" placeholder="Validade Cartão" formControlName="validadeCartao">
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6">
+        <mat-form-field class="size-cpf-date">
+          <input matInput type="text" placeholder="Agência" formControlName="agencia">
+        </mat-form-field>
+      </div>
+      <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6">
+        <mat-form-field class="size-cpf-date">
+          <input matInput type="text" placeholder="Código CCV" formControlName="ccv">
+        </mat-form-field>
+      </div>
+    </div>
+  </mat-dialog-content>
+  <mat-dialog-actions align="end">
+    <button mat-stroked-button [mat-dialog-close]="true" class="btn-success" [disabled]="!this.form.dirty"
+      (click)="onSubmit()">Pagar</button>
+    <button mat-button mat-dialog-close class="btn-danger">Cancelar</button>
+  </mat-dialog-actions>
+</form>

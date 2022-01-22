@@ -1,0 +1,35 @@
+<mat-toolbar>
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+    <mat-icon>home</mat-icon>
+  </button>
+  <span>Digital Parking Space - Espaço Empresarial</span>
+  <span class="example-spacer"></span>
+  <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+    <mat-icon>settings</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item (click)="onManageChange()">
+      <mat-icon>manage_accounts</mat-icon>
+      <span>Dados da Conta</span>
+    </button>
+    <button mat-menu-item (click)="onSupport()">
+      <mat-icon>report_problem</mat-icon>
+      <span>Suporte</span>
+    </button>
+    <button mat-menu-item (click)="onHelp()">
+      <mat-icon>help</mat-icon>
+      <span>Ajuda</span>
+    </button>
+  </mat-menu>
+  <button mat-icon-button (click)="onExit()" class="example-icon" aria-label="Example icon-button with share icon">
+    <mat-icon>logout</mat-icon>
+  </button>
+</mat-toolbar>
+<mat-tab-group animationDuration="0ms">
+  <mat-tab label="Cadastro de Vagas">
+    <app-company-parking-registration></app-company-parking-registration>
+  </mat-tab>
+  <mat-tab label="Informações/ Regras">
+    <app-information></app-information>
+  </mat-tab>
+</mat-tab-group>

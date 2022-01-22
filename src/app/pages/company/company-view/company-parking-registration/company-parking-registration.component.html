@@ -1,0 +1,82 @@
+<form [formGroup]="form" class="overflow align">
+  <div class="row">
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+      <mat-form-field class="full-width-input">
+        <input matInput type="number" placeholder="Número" formControlName="numero">
+      </mat-form-field>
+    </div>
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+      <mat-form-field>
+        <mat-label>Veículo</mat-label>
+        <mat-select formControlName="veiculo">
+          <mat-option *ngFor="let veiculos of veiculo" [value]="veiculos.value">
+            {{veiculos.value}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+      <mat-form-field>
+        <mat-label>Classificação Física</mat-label>
+        <mat-select formControlName="classificacaoFisica">
+          <mat-option *ngFor="let classificacao of classificacaoFisica" [value]="classificacao.value">
+            {{classificacao.value}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+      <button mat-stroked-button color="primary" [disabled]="!this.form.dirty" (click)="onSubmit()">Cadastrar</button>
+    </div>
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+      <mat-form-field class="position">
+        <mat-label>Filtro</mat-label>
+        <input matInput (keyup)="applyFilter($event)" placeholder="Pesquisar" #input>
+        <mat-icon matSuffix>search</mat-icon>
+      </mat-form-field>
+    </div>
+  </div>
+</form>
+
+<table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8 demo-table">
+  <ng-container matColumnDef="edit">
+    <th mat-header-cell *matHeaderCellDef></th>
+    <td mat-cell *matCellDef="let element">
+      <button mat-menu-item class="size-icon" (click)="onUpdate(element)">
+        <mat-icon class="color-edit">edit</mat-icon>
+      </button>
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="delete">
+    <th mat-header-cell *matHeaderCellDef></th>
+    <td mat-cell *matCellDef="let element">
+      <button mat-menu-item class="size-icon" (click)="onRemove(element)">
+        <mat-icon class="color-delete">delete</mat-icon>
+      </button>
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="numero">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>Número Vaga</th>
+    <td mat-cell *matCellDef="let row"> {{row.numero}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="classificacaoFisica">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>Classificação Física</th>
+    <td mat-cell *matCellDef="let row">{{row.classificacaoFisica}}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="veiculo">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>Veículo</th>
+    <td mat-cell *matCellDef="let element">{{element.veiculo}}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="status">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>Status</th>
+    <td mat-cell *matCellDef="let element">{{true == element.status.IsAtivo ? 'Ocupada' : 'Disponível' }}</td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>

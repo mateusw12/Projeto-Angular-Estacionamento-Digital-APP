@@ -1,0 +1,40 @@
+.overflow {
+  overflow: hidden;
+}
+
+.align {
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+.demo-table {
+  width: 100%;
+}
+
+.demo-button-container {
+  padding-bottom: 16px;
+}
+
+.demo-button+.demo-button {
+  margin-left: 8px;
+}
+
+.color-edit {
+  color: rgb(255, 163, 57);
+}
+
+.color-delete {
+  color: rgb(245, 0, 0);
+}
+
+.position {
+  margin-left: 225px;
+}
+
+th.mat-sort-header-sorted {
+  color: black;
+}
+
+.size-icon {
+  width: 50px !important;
+}
