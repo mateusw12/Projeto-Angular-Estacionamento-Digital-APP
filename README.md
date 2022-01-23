@@ -38,3 +38,7 @@ Project based on an idea of digitally reserving or renting parking spaces, being
 
 - Integration with payment api was not performed.
 - No user authentication control was performed.
+
+## Libraries used
+
+- Angular Material
