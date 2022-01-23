@@ -28,3 +28,13 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## About the project
 
+Project based on an idea of digitally reserving or renting parking spaces, being done through a website, for its use it has the following requirements:
+- Login.
+- User registration, company, parking spaces, vehicle.
+- Information and rules of conduct for the use of the site.
+- Payment method.
+
+## Warning!
+
+- Integration with payment api was not performed.
+- No user authentication control was performed.
